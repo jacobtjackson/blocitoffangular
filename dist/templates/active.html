@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div class="list-container">
+        <h1>Active Tasks</h1>
+        <table class="mdl-data-table mdl-js-data-table">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Task</th>
+                    <th>Completed?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in tasklist">
+                    <td>{{ item.title }}</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

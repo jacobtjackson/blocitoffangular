@@ -9,11 +9,26 @@
         $stateProvider
             .state('landing', {
                 url: '/',
-                templateUrl: '/templates/landing.html'
+                templateUrl: '/templates/home.html'
+            })
+            .state('active', {
+                url: '/',
+                controller: 'TaskCtrl as task',
+                templateUrl: '/templates/active.html'
+            })
+            .state('completed', {
+                url: '/',
+                templateUrl: '/templates/completed.html'
+            })
+            .state('newTask', {
+                url: '/',
+                controller: 'TaskCtrl as task',
+                templateUrl: '/templates/newTask.html'
             });
+            
     }
 
-angular
-    .module('blocitoff', ['firebase', 'ui.router'])
-    .config(config);
+    angular
+        .module('blocitoff', ['firebase', 'ui.router'])
+        .config(config);
 })();

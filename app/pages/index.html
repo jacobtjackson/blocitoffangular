@@ -2,13 +2,27 @@
 <html ng-app="blocitoff">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <title>Blocitoff</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.cyan-purple.min.css" />
 </head>
 <body>
-    <script src="/scripts/app.js"></script>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Blocitoff</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" ui-sref="active">My Tasks</a>
+                    <a class="mdl-navigation__link" ui-sref="newTask">New Task</a>
+                </nav>
+            </div>
+        </header>
+    <ui-view></ui-view>
+    </div>
     <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
@@ -24,7 +38,10 @@
             databaseURL: "https://blocitoff-41fa4.firebaseio.com",
             storageBucket: "blocitoff-41fa4.appspot.com",
         };
-  firebase.initializeApp(config);
-</script>
+        firebase.initializeApp(config);
+    </script>
+    <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/taskCtrl.js"></script>
 </body>
 </html>
